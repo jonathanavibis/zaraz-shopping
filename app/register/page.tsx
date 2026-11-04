@@ -22,8 +22,12 @@ export default function RegisterPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (password.length < 6) {
-      toast.error("Password must be at least 6 characters");
+    const hasUpper = /[A-Z]/.test(password);
+    const hasLower = /[a-z]/.test(password);
+    const hasLen = password.length >= 6;
+
+    if (!hasLen || !hasUpper || !hasLower) {
+      toast.error("Password must contain uppercase, lowercase letters and be at least 6 characters.");
       return;
     }
 
@@ -122,18 +126,21 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label className="block text-gray-300 font-semibold mb-1">Password (Min. 6 chars) *</label>
+            <label className="block text-gray-300 font-semibold mb-1">Password *</label>
             <div className="relative">
               <input
                 type="password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder="At least 6 chars, uppercase & lowercase"
                 className="w-full bg-[#111e2f] text-white p-3 pl-10 rounded-xl border border-gray-800 focus:outline-none focus:border-emerald-500"
               />
               <Lock className="w-4 h-4 text-gray-500 absolute left-3 top-3.5" />
             </div>
+            <p className="text-[10px] text-gray-400 mt-1 flex items-center gap-1">
+              <span className="text-emerald-400 font-bold">Rule:</span> Must contain at least 1 uppercase letter, 1 lowercase letter, and 6+ characters.
+            </p>
           </div>
 
           <button

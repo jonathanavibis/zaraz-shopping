@@ -27,9 +27,9 @@ export default function LoginPage() {
 
   const handleDemoLogin = async () => {
     setEmail("user@zaraz.com");
-    setPassword("password123");
+    setPassword("Password123");
     setLoading(true);
-    const success = await login("user@zaraz.com", "password123");
+    const success = await login("user@zaraz.com", "Password123");
     setLoading(false);
     if (success) {
       router.push("/");
