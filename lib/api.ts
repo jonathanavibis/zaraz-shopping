@@ -1,10 +1,13 @@
 // Zaraz Universal API Client (Connecting Frontend to zaraz-server and MongoDB)
 
 export const BACKEND_URL =
-  process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:5000";
+  process.env.NEXT_PUBLIC_SERVER_URL ||
+  (typeof window !== "undefined" && window.location.hostname.includes("vercel.app")
+    ? "https://zaraz-server30.vercel.app"
+    : "http://localhost:5000");
 
 /**
- * Universal fetcher that connects directly to zaraz-server (port 5000)
+ * Universal fetcher that connects directly to zaraz-server (Express + MongoDB Atlas)
  * and falls back to internal Next.js API if zaraz-server is not reachable.
  */
 export async function apiRequest<T = any>(

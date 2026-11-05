@@ -48,7 +48,10 @@ const getBaseUrl = () => {
   if (process.env.NEXT_PUBLIC_APP_URL && !process.env.NEXT_PUBLIC_APP_URL.includes("localhost")) {
     return process.env.NEXT_PUBLIC_APP_URL;
   }
-  return "http://localhost:3000";
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return "https://zaraz.vercel.app";
 };
 
 export const auth = betterAuth({
