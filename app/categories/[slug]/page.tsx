@@ -235,7 +235,7 @@ export default function CategoryPage() {
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
               {sortedProducts.map((product) => (
-                <ProductCard key={product.id || product.slug} product={product} />
+                <ProductCard key={product.id || (product as any)._id || product.slug} product={product} />
               ))}
             </div>
           )}

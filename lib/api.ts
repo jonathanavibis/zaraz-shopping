@@ -5,7 +5,7 @@ export const BACKEND_URL =
 
 /**
  * Universal fetcher that connects directly to zaraz-server (port 5000)
- * and falls back to internal Next.js API if zaraz-server is not running.
+ * and falls back to internal Next.js API if zaraz-server is not reachable.
  */
 export async function apiRequest<T = any>(
   endpoint: string,
@@ -18,6 +18,7 @@ export async function apiRequest<T = any>(
     const res = await fetch(`${BACKEND_URL}${cleanEndpoint}`, {
       ...options,
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
         ...(typeof window !== "undefined" && localStorage.getItem("zaraz_token")
           ? { Authorization: `Bearer ${localStorage.getItem("zaraz_token")}` }
@@ -26,7 +27,13 @@ export async function apiRequest<T = any>(
       },
     });
 
-    if (res.ok || res.status === 400 || res.status === 401 || res.status === 404 || res.status === 409) {
+    if (
+      res.ok ||
+      res.status === 400 ||
+      res.status === 401 ||
+      res.status === 404 ||
+      res.status === 409
+    ) {
       const data = await res.json();
       return data;
     }
@@ -46,6 +53,7 @@ export async function apiRequest<T = any>(
     const res = await fetch(fallbackEndpoint, {
       ...options,
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
         ...options?.headers,
       },

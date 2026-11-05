@@ -41,8 +41,12 @@ export default function ProductDetailsPage() {
         setLoading(true);
         const data = await apiRequest(`/products/${id}`);
         if (data.success && data.product) {
-          setProduct(data.product);
-          setSelectedImage(data.product.images?.[0] || "");
+          const prod = {
+            ...data.product,
+            id: data.product.id || data.product._id,
+          };
+          setProduct(prod);
+          setSelectedImage(prod.images?.[0] || "");
         }
       } catch (e) {
         console.error(e);

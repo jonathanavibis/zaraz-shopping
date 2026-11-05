@@ -6,7 +6,11 @@ import { FaGithub } from "react-icons/fa";
 import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
 
-export default function SocialButtons({ redirectUrl = "/" }: { redirectUrl?: string }) {
+export default function SocialButtons({
+  redirectUrl = "/",
+}: {
+  redirectUrl?: string;
+}) {
   const [activeProvider, setActiveProvider] = useState<"google" | "github" | null>(null);
 
   const handleSocialSignIn = async (provider: "google" | "github") => {
@@ -16,14 +20,18 @@ export default function SocialButtons({ redirectUrl = "/" }: { redirectUrl?: str
         ? redirectUrl
         : `${window.location.origin}${redirectUrl.startsWith("/") ? redirectUrl : `/${redirectUrl}`}`;
 
-      // Invokes BetterAuth social sign-in with Google / GitHub Client credentials
-      await authClient.signIn.social({
+      // Invokes BetterAuth social sign-in with Google / GitHub Client credentials from .env
+      const res = await authClient.signIn.social({
         provider,
         callbackURL: fullCallback,
       });
+
+      if (res?.data?.url) {
+        window.location.href = res.data.url;
+      }
     } catch (err: any) {
       console.error(`${provider} OAuth redirect error:`, err);
-      toast.error(`Could not initiate ${provider} sign-in. Check OAuth credentials.`);
+      toast.error(`Could not initiate ${provider} sign-in. Please try again.`);
       setActiveProvider(null);
     }
   };

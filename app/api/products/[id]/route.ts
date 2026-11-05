@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDb, getMemoryStore } from "@/lib/db";
 import { Product } from "@/lib/seed-data";
+import { ObjectId } from "mongodb";
 
 export async function GET(
   request: Request,
@@ -13,14 +14,24 @@ export async function GET(
     let product: Product | null = null;
 
     if (!isMemory && db) {
+      const orConditions: any[] = [{ id }, { slug: id }];
+      if (ObjectId.isValid(id)) {
+        orConditions.push({ _id: new ObjectId(id) });
+      }
       product = (await db
         .collection<Product>("products")
-        .findOne({ $or: [{ id }, { slug: id }] } as any)) as any;
+        .findOne({ $or: orConditions } as any)) as any;
     }
 
     if (!product) {
       const mem = getMemoryStore();
-      product = mem.products.find((p) => p.id === id || p.slug === id) || null;
+      product =
+        mem.products.find(
+          (p) =>
+            p.id === id ||
+            (p as any)._id?.toString() === id ||
+            p.slug === id
+        ) || null;
     }
 
     if (!product) {
@@ -48,11 +59,17 @@ export async function DELETE(
     const { db, isMemory } = await getDb();
 
     if (!isMemory && db) {
-      await db.collection("products").deleteOne({ id });
+      const orConditions: any[] = [{ id }];
+      if (ObjectId.isValid(id)) {
+        orConditions.push({ _id: new ObjectId(id) });
+      }
+      await db.collection("products").deleteOne({ $or: orConditions });
     }
 
     const mem = getMemoryStore();
-    mem.products = mem.products.filter((p) => p.id !== id);
+    mem.products = mem.products.filter(
+      (p) => p.id !== id && (p as any)._id?.toString() !== id
+    );
 
     return NextResponse.json({
       success: true,

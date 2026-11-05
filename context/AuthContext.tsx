@@ -52,32 +52,67 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    try {
-      const savedUser = localStorage.getItem("zaraz_user");
-      const savedToken = localStorage.getItem("zaraz_token");
-      if (savedToken) {
-        setToken(savedToken);
-      }
-      if (savedUser) {
-        setUser(JSON.parse(savedUser));
-      }
+    async function initAuth() {
+      try {
+        const savedUser = localStorage.getItem("zaraz_user");
+        const savedToken = localStorage.getItem("zaraz_token");
 
-      // If token exists, verify and refresh user profile from zaraz_auth_db
-      if (savedToken) {
-        apiRequest("/auth/me")
-          .then((res) => {
-            if (res.success && res.user) {
-              setUser(res.user);
-              localStorage.setItem("zaraz_user", JSON.stringify(res.user));
+        if (savedToken) {
+          setToken(savedToken);
+        }
+        if (savedUser) {
+          setUser(JSON.parse(savedUser));
+        }
+
+        // 1. Check for Better Auth OAuth session (Google / GitHub)
+        try {
+          const sessionRes = await fetch("/api/auth/get-session");
+          if (sessionRes.ok) {
+            const session = await sessionRes.json();
+            if (session && session.user && session.user.email) {
+              // Sync OAuth user with MongoDB zaraz_auth_db and obtain JWT
+              const syncData = await apiRequest("/auth/social", {
+                method: "POST",
+                body: JSON.stringify({
+                  email: session.user.email,
+                  name: session.user.name,
+                  image: session.user.image,
+                  provider: "oauth",
+                }),
+              });
+
+              if (syncData.success && syncData.user) {
+                setUser(syncData.user);
+                setToken(syncData.token);
+                localStorage.setItem("zaraz_user", JSON.stringify(syncData.user));
+                if (syncData.token) {
+                  localStorage.setItem("zaraz_token", syncData.token);
+                }
+              }
             }
-          })
-          .catch(() => {});
+          }
+        } catch (sessErr) {
+          // Better Auth session check error ignored in offline / static dev
+        }
+
+        // 2. If token exists, verify and refresh user profile from zaraz_auth_db
+        if (savedToken) {
+          try {
+            const meRes = await apiRequest("/auth/me");
+            if (meRes.success && meRes.user) {
+              setUser(meRes.user);
+              localStorage.setItem("zaraz_user", JSON.stringify(meRes.user));
+            }
+          } catch {}
+        }
+      } catch (e) {
+        console.error("[AuthContext Init Error]:", e);
+      } finally {
+        setLoading(false);
       }
-    } catch (e) {
-      console.error("[AuthContext Init Error]:", e);
-    } finally {
-      setLoading(false);
     }
+
+    initAuth();
   }, []);
 
   const login = async (email: string, password: string): Promise<boolean> => {
@@ -97,11 +132,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         toast.success(`Welcome back, ${data.user.name}!`);
         return true;
       } else {
-        toast.error(data.message || "Login failed");
+        toast.error(data.message || "Invalid credentials. Please check your email and password.");
         return false;
       }
     } catch (error: any) {
-      toast.error(error.message || "An error occurred");
+      toast.error(error.message || "Authentication failed");
       return false;
     }
   };
@@ -165,11 +200,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
-  const logout = () => {
+  const logout = async () => {
     setUser(null);
     setToken(null);
     localStorage.removeItem("zaraz_user");
     localStorage.removeItem("zaraz_token");
+    try {
+      await fetch("/api/auth/sign-out", { method: "POST" });
+    } catch {}
     toast.success("Logged out successfully");
   };
 

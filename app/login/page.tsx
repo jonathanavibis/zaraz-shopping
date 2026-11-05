@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Lock, Mail, ArrowRight, ShieldCheck } from "lucide-react";
+import { Lock, Mail, ArrowRight } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import SocialButtons from "@/components/SocialButtons";
 
@@ -25,17 +25,6 @@ export default function LoginPage() {
     }
   };
 
-  const handleDemoLogin = async () => {
-    setEmail("user@zaraz.com");
-    setPassword("Password123");
-    setLoading(true);
-    const success = await login("user@zaraz.com", "Password123");
-    setLoading(false);
-    if (success) {
-      router.push("/");
-    }
-  };
-
   return (
     <div className="min-h-[85vh] flex items-center justify-center px-4 py-12">
       <div className="max-w-md w-full bg-[#0b1420] border border-emerald-950/80 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
@@ -46,32 +35,24 @@ export default function LoginPage() {
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-400 flex items-center justify-center mx-auto mb-3 text-black font-black text-2xl shadow-lg shadow-emerald-900/40">
             Z
           </div>
-          <h1 className="text-2xl font-black text-white">Welcome Back</h1>
+          <h1 className="text-2xl font-black text-white">Welcome to Zaraz</h1>
           <p className="text-xs text-gray-400 mt-1">
-            Sign in to Zaraz.app with your Google, GitHub or email account.
+            Sign in with your Google, GitHub or registered email account.
           </p>
         </div>
 
-        {/* 1-Click Social Sign-in (Google & GitHub) */}
+        {/* 1-Click Social Sign-in (Google & GitHub) with .env OAuth Credentials */}
         <div className="mb-5">
           <SocialButtons redirectUrl="/" />
         </div>
 
         <div className="relative flex py-2 items-center mb-5">
           <div className="flex-grow border-t border-gray-800"></div>
-          <span className="flex-shrink mx-4 text-gray-500 text-[11px] uppercase font-bold">Or sign in with email</span>
+          <span className="flex-shrink mx-4 text-gray-500 text-[11px] uppercase font-bold">
+            Or sign in with email
+          </span>
           <div className="flex-grow border-t border-gray-800"></div>
         </div>
-
-        {/* Demo Login Button */}
-        <button
-          type="button"
-          onClick={handleDemoLogin}
-          className="w-full mb-4 py-2.5 px-4 rounded-xl bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-500/40 text-emerald-300 font-bold text-xs flex items-center justify-center gap-2 transition"
-        >
-          <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>Click Here for 1-Click Instant Demo Login</span>
-        </button>
 
         <form onSubmit={handleSubmit} className="space-y-4 text-xs">
           <div>
@@ -90,7 +71,12 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label className="block text-gray-300 font-semibold mb-1">Password</label>
+            <div className="flex items-center justify-between mb-1">
+              <label className="block text-gray-300 font-semibold">Password</label>
+              <Link href="/help" className="text-emerald-400 hover:underline text-[11px]">
+                Forgot password?
+              </Link>
+            </div>
             <div className="relative">
               <input
                 type="password"
@@ -107,15 +93,15 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 px-4 bg-emerald-500 hover:bg-emerald-400 disabled:bg-gray-700 text-black font-extrabold text-sm rounded-xl shadow-lg shadow-emerald-950/80 transition flex items-center justify-center gap-2 mt-6"
+            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-black font-extrabold text-sm flex items-center justify-center gap-2 transition duration-200 shadow-lg shadow-emerald-950/40 disabled:opacity-60 cursor-pointer"
           >
-            <span>{loading ? "Signing In..." : "Sign In to Zaraz"}</span>
+            <span>{loading ? "Authenticating..." : "Sign In to Zaraz"}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </form>
 
         <p className="text-center text-xs text-gray-400 mt-6">
-          Don&apos;t have an account?{" "}
+          New to Zaraz.app?{" "}
           <Link href="/register" className="text-emerald-400 font-bold hover:underline">
             Create an Account
           </Link>

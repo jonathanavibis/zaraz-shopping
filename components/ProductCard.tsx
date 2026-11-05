@@ -13,11 +13,12 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
+  const productId = product.id || (product as any)._id || product.slug;
 
   return (
     <div className="group relative bg-[#0e1624] border border-emerald-950/70 hover:border-emerald-500/60 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-emerald-950/40 hover:-translate-y-1">
       {/* Product Image Area */}
-      <Link href={`/products/${product.id}`} className="block relative aspect-square overflow-hidden bg-black/40">
+      <Link href={`/products/${productId}`} className="block relative aspect-square overflow-hidden bg-black/40">
         <img
           src={product.images[0] || "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"}
           alt={product.title}
@@ -57,7 +58,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
 
           {/* Title */}
-          <Link href={`/products/${product.id}`}>
+          <Link href={`/products/${productId}`}>
             <h3 className="text-xs sm:text-sm font-semibold text-gray-100 hover:text-emerald-400 line-clamp-2 transition leading-snug mb-2">
               {product.title}
             </h3>
