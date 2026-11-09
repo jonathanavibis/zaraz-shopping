@@ -206,3 +206,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #51] fix(api): fallback seamlessly to internal API if remote server is unreachable
 - **Timestamp:** `2026-11-09T19:23:40.255Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #52] fix(api): automatically attach Bearer token to authenticated request headers
+- **Timestamp:** `2026-11-09T19:23:40.788Z`
+- **Target:** `D:/Project/Zaraz.app`
