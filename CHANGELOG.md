@@ -494,3 +494,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #123] style(badges): polish Daraz-style discount tag gradient and font weight
 - **Timestamp:** `2026-11-09T19:24:20.265Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #124] style(typography): refine heading typography scale and letter spacing
+- **Timestamp:** `2026-11-09T19:24:20.874Z`
+- **Target:** `D:/Project/Zaraz.app`
