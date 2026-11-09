@@ -70,3 +70,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #17] feat(product-details): create dynamic product details page at /products/[id]
 - **Timestamp:** `2026-11-09T19:23:22.203Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #18] feat(product-details): implement multi-image thumbnail gallery with zoom preview
+- **Timestamp:** `2026-11-09T19:23:22.687Z`
+- **Target:** `D:/Project/Zaraz.app`
