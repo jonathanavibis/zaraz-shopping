@@ -14,3 +14,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #3] feat(storefront): create reusable responsive Navbar with search and category dropdown
 - **Timestamp:** `2026-11-09T19:23:14.771Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #4] feat(storefront): implement CartContext provider with persistent local storage
+- **Timestamp:** `2026-11-09T19:23:15.370Z`
+- **Target:** `D:/Project/Zaraz.app`
