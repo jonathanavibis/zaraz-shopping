@@ -366,3 +366,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #91] docs(readme): add comprehensive project description and feature breakdown
 - **Timestamp:** `2026-11-09T19:24:00.902Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #92] docs(readme): document Next.js 16 App Router architecture and directory tree
+- **Timestamp:** `2026-11-09T19:24:01.411Z`
+- **Target:** `D:/Project/Zaraz.app`
