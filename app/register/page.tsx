@@ -1,15 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Lock, Mail, User, Phone, MapPin, ArrowRight } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import SocialButtons from "@/components/SocialButtons";
 import toast from "react-hot-toast";
 
-export default function RegisterPage() {
+function RegisterForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectUrl = searchParams.get("redirect") || "/";
   const { register } = useAuth();
 
   const [name, setName] = useState("");
@@ -35,7 +37,7 @@ export default function RegisterPage() {
     const success = await register(name, email, password, phone, address);
     setLoading(false);
     if (success) {
-      router.push("/");
+      router.push(redirectUrl);
     }
   };
 
@@ -57,7 +59,7 @@ export default function RegisterPage() {
 
         {/* Social Sign up */}
         <div className="mb-5">
-          <SocialButtons redirectUrl="/" />
+          <SocialButtons redirectUrl={redirectUrl} />
         </div>
 
         <div className="relative flex py-2 items-center mb-5">
@@ -146,20 +148,31 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 px-4 bg-emerald-500 hover:bg-emerald-400 disabled:bg-gray-700 text-black font-extrabold text-sm rounded-xl shadow-lg shadow-emerald-950/80 transition flex items-center justify-center gap-2 mt-6"
+            className="w-full py-3 px-4 bg-emerald-500 hover:bg-emerald-400 disabled:bg-gray-700 text-black font-extrabold text-sm rounded-xl shadow-lg shadow-emerald-950/80 transition flex items-center justify-center gap-2 mt-6 cursor-pointer"
           >
-            <span>{loading ? "Creating Account..." : "Create Free Account"}</span>
+            <span>{loading ? "Creating Account..." : (redirectUrl === "/checkout" ? "Register & Continue to Checkout" : "Create Free Account")}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </form>
 
         <p className="text-center text-xs text-gray-400 mt-6">
           Already have an account?{" "}
-          <Link href="/login" className="text-emerald-400 font-bold hover:underline">
+          <Link 
+            href={`/login${redirectUrl !== "/" ? `?redirect=${encodeURIComponent(redirectUrl)}` : ""}`} 
+            className="text-emerald-400 font-bold hover:underline"
+          >
             Sign In here
           </Link>
         </p>
       </div>
     </div>
+  );
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense fallback={<div className="min-h-[85vh] flex items-center justify-center text-gray-400 text-sm">Loading registration...</div>}>
+      <RegisterForm />
+    </Suspense>
   );
 }

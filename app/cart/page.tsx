@@ -15,10 +15,13 @@ import {
   Check,
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
 import { formatPrice } from "@/lib/utils";
+import toast from "react-hot-toast";
 
 export default function CartPage() {
   const router = useRouter();
+  const { user } = useAuth();
   const {
     cart,
     removeFromCart,
@@ -294,7 +297,14 @@ export default function CartPage() {
             </div>
 
             <button
-              onClick={() => router.push("/checkout")}
+              onClick={() => {
+                if (!user) {
+                  toast.error("Please sign in to your Zaraz account before proceeding to checkout.");
+                  router.push("/login?redirect=/checkout");
+                  return;
+                }
+                router.push("/checkout");
+              }}
               className="w-full py-3.5 px-4 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm rounded-xl shadow-lg shadow-emerald-950/60 flex items-center justify-center gap-2 transition"
             >
               <span>Proceed to Checkout</span>

@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Lock, Mail, ArrowRight } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import SocialButtons from "@/components/SocialButtons";
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectUrl = searchParams.get("redirect") || "/";
   const { login } = useAuth();
 
   const [email, setEmail] = useState("");
@@ -21,7 +23,7 @@ export default function LoginPage() {
     const success = await login(email, password);
     setLoading(false);
     if (success) {
-      router.push("/");
+      router.push(redirectUrl);
     }
   };
 
@@ -37,13 +39,15 @@ export default function LoginPage() {
           </div>
           <h1 className="text-2xl font-black text-white">Welcome to Zaraz</h1>
           <p className="text-xs text-gray-400 mt-1">
-            Sign in with your Google, GitHub or registered email account.
+            {redirectUrl === "/checkout" 
+              ? "Please sign in to proceed with your order and tracking."
+              : "Sign in with your Google, GitHub or registered email account."}
           </p>
         </div>
 
         {/* 1-Click Social Sign-in (Google & GitHub) with .env OAuth Credentials */}
         <div className="mb-5">
-          <SocialButtons redirectUrl="/" />
+          <SocialButtons redirectUrl={redirectUrl} />
         </div>
 
         <div className="relative flex py-2 items-center mb-5">
@@ -95,18 +99,29 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-black font-extrabold text-sm flex items-center justify-center gap-2 transition duration-200 shadow-lg shadow-emerald-950/40 disabled:opacity-60 cursor-pointer"
           >
-            <span>{loading ? "Authenticating..." : "Sign In to Zaraz"}</span>
+            <span>{loading ? "Authenticating..." : (redirectUrl === "/checkout" ? "Sign In & Continue to Checkout" : "Sign In to Zaraz")}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </form>
 
         <p className="text-center text-xs text-gray-400 mt-6">
           New to Zaraz.app?{" "}
-          <Link href="/register" className="text-emerald-400 font-bold hover:underline">
+          <Link 
+            href={`/register${redirectUrl !== "/" ? `?redirect=${encodeURIComponent(redirectUrl)}` : ""}`} 
+            className="text-emerald-400 font-bold hover:underline"
+          >
             Create an Account
           </Link>
         </p>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-[85vh] flex items-center justify-center text-gray-400 text-sm">Loading sign in...</div>}>
+      <LoginForm />
+    </Suspense>
   );
 }

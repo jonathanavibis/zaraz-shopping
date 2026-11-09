@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { Product } from "@/lib/seed-data";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
 import { formatPrice } from "@/lib/utils";
 import { apiRequest } from "@/lib/api";
 import toast from "react-hot-toast";
@@ -29,6 +30,7 @@ export default function ProductDetailsPage() {
   const id = params?.id as string;
 
   const { addToCart } = useCart();
+  const { user } = useAuth();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState<string>("");
@@ -80,6 +82,11 @@ export default function ProductDetailsPage() {
 
   const handleBuyNow = () => {
     addToCart(product, quantity);
+    if (!user) {
+      toast.error("Please sign in to proceed with your order.");
+      router.push("/login?redirect=/checkout");
+      return;
+    }
     router.push("/checkout");
   };
 

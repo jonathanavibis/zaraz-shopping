@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
@@ -10,6 +10,7 @@ import {
   MapPin,
   Lock,
   ArrowLeft,
+  ArrowRight,
   CheckCircle2,
   Clock,
   Sparkles,
@@ -23,22 +24,83 @@ import toast from "react-hot-toast";
 export default function CheckoutPage() {
   const router = useRouter();
   const { cart, itemCount, subtotal, shippingFee, discount, total, clearCart, deliveryMethod, setDeliveryMethod } = useCart();
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
 
-  // Form states
+  // Form states populated from authenticated user
   const [name, setName] = useState(user?.name || "");
-  const [email, setEmail] = useState(user?.email || "customer@zaraz.com");
-  const [phone, setPhone] = useState(user?.phone || "01712345678");
+  const [email, setEmail] = useState(user?.email || "");
+  const [phone, setPhone] = useState(user?.phone || "");
   const [division, setDivision] = useState("Dhaka");
   const [city, setCity] = useState("Dhaka North");
-  const [address, setAddress] = useState(user?.address || "House 12, Road 4, Sector 7, Uttara");
+  const [address, setAddress] = useState(user?.address || "");
   const [deliveryType, setDeliveryType] = useState<"home" | "office">("home");
+
+  // Synchronize form states when authenticated user loads
+  useEffect(() => {
+    if (user) {
+      if (user.name) setName(user.name);
+      if (user.email) setEmail(user.email);
+      if (user.phone) setPhone(user.phone);
+      if (user.address) setAddress(user.address);
+    }
+  }, [user]);
 
   // Payment states
   const [paymentMethod, setPaymentMethod] = useState<"cod" | "bkash" | "nagad" | "rocket" | "card">("bkash");
-  const [accountNumber, setAccountNumber] = useState("01712345678");
-  const [pinOrCvv, setPinOrCvv] = useState("1234");
+  const [accountNumber, setAccountNumber] = useState(user?.phone || "");
+  const [pinOrCvv, setPinOrCvv] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // 1. Loading state while checking authentication
+  if (authLoading) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+        <div className="w-12 h-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-gray-400 text-sm">Verifying authentication status...</p>
+      </div>
+    );
+  }
+
+  // 2. Strict Authentication Guard - User MUST be logged in
+  if (!user) {
+    return (
+      <div className="max-w-md mx-auto px-4 py-16 text-center">
+        <div className="bg-[#0b1420] border border-emerald-950/80 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mx-auto mb-5 text-amber-400">
+            <Lock className="w-8 h-8" />
+          </div>
+          <h2 className="text-2xl font-black text-white mb-2">Login Required to Order</h2>
+          <p className="text-gray-400 text-xs leading-relaxed mb-6">
+            For buyer protection, security, and real-time courier delivery tracking, you must sign in to your Zaraz account before placing an order.
+          </p>
+
+          <div className="space-y-3">
+            <Link
+              href="/login?redirect=/checkout"
+              className="w-full py-3.5 px-4 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm rounded-xl shadow-lg flex items-center justify-center gap-2 transition"
+            >
+              <span>Sign In to Continue</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+
+            <Link
+              href="/register?redirect=/checkout"
+              className="w-full py-3 px-4 bg-[#111e2f] hover:bg-[#15253a] border border-emerald-950 text-white font-bold text-sm rounded-xl flex items-center justify-center transition"
+            >
+              <span>Create New Account</span>
+            </Link>
+
+            <Link
+              href="/cart"
+              className="block text-xs text-gray-400 hover:text-emerald-400 pt-3 transition"
+            >
+              &larr; Return to Shopping Cart
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (cart.length === 0) {
     return (
@@ -54,6 +116,12 @@ export default function CheckoutPage() {
 
   const handlePlaceOrder = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!user) {
+      toast.error("Please log in to your account to place an order.");
+      router.push("/login?redirect=/checkout");
+      return;
+    }
 
     if (!name || !phone || !address) {
       toast.error("Please fill in all delivery details");
@@ -114,7 +182,12 @@ export default function CheckoutPage() {
         router.push(`/orders/${orderId}`);
       } else {
         toast.dismiss(toastId);
-        toast.error(data.message || "Failed to place order");
+        if (data.requireLogin) {
+          toast.error("Please log in to your account to place an order.");
+          router.push("/login?redirect=/checkout");
+        } else {
+          toast.error(data.message || "Failed to place order");
+        }
       }
     } catch (err: any) {
       toast.dismiss(toastId);
@@ -163,6 +236,20 @@ export default function CheckoutPage() {
                 <MapPin className="w-4 h-4 text-emerald-400" /> Delivery Address &amp; Contact
               </h2>
             </div>
+
+            {user && (
+              <div className="mb-4 p-3 bg-emerald-950/40 border border-emerald-500/40 rounded-xl flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="text-xs text-gray-300">
+                    Logged in as: <strong className="text-white">{user.name}</strong> ({user.email})
+                  </span>
+                </div>
+                <span className="text-[10px] font-bold text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded-full border border-emerald-500/40">
+                  Verified Account
+                </span>
+              </div>
+            )}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div>
