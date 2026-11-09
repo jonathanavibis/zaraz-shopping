@@ -118,3 +118,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #29] feat(checkout): create multi-step checkout page with customer shipping form
 - **Timestamp:** `2026-11-09T19:23:28.786Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #30] feat(checkout): implement city and area selector for nationwide delivery calculation
+- **Timestamp:** `2026-11-09T19:23:29.312Z`
+- **Target:** `D:/Project/Zaraz.app`
