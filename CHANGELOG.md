@@ -230,3 +230,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #57] fix(hydration): guard against local storage hydration mismatch in AuthContext
 - **Timestamp:** `2026-11-09T19:23:43.263Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #58] fix(navbar): resolve mobile navigation drawer backdrop click closing bug
+- **Timestamp:** `2026-11-09T19:23:43.772Z`
+- **Target:** `D:/Project/Zaraz.app`
