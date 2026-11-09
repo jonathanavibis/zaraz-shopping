@@ -382,3 +382,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #95] docs(components): add component documentation for HeroBanner and ProductCard
 - **Timestamp:** `2026-11-09T19:24:03.066Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #96] docs(context): document CartContext and AuthContext API specifications
+- **Timestamp:** `2026-11-09T19:24:03.660Z`
+- **Target:** `D:/Project/Zaraz.app`
