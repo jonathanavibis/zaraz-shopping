@@ -18,3 +18,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #4] feat(storefront): implement CartContext provider with persistent local storage
 - **Timestamp:** `2026-11-09T19:23:15.370Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #5] feat(storefront): implement AuthContext provider managing JWT token and user profile
+- **Timestamp:** `2026-11-09T19:23:15.863Z`
+- **Target:** `D:/Project/Zaraz.app`
