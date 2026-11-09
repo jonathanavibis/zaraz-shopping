@@ -398,3 +398,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #99] docs(changelog): document v1.0.0 release notes and feature additions
 - **Timestamp:** `2026-11-09T19:24:05.523Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #100] docs(deploy): document Vercel deployment steps and custom domain bindings
+- **Timestamp:** `2026-11-09T19:24:06.108Z`
+- **Target:** `D:/Project/Zaraz.app`
