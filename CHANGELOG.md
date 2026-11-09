@@ -402,3 +402,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #100] docs(deploy): document Vercel deployment steps and custom domain bindings
 - **Timestamp:** `2026-11-09T19:24:06.108Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #101] docs(security): document client-side token storage and route protection
+- **Timestamp:** `2026-11-09T19:24:06.701Z`
+- **Target:** `D:/Project/Zaraz.app`
