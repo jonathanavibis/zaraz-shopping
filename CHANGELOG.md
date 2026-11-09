@@ -162,3 +162,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #40] feat(auth): implement Google OAuth social sign-in integration
 - **Timestamp:** `2026-11-09T19:23:34.663Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #41] feat(auth): implement GitHub OAuth social sign-in integration
+- **Timestamp:** `2026-11-09T19:23:35.178Z`
+- **Target:** `D:/Project/Zaraz.app`
