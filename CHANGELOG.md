@@ -526,3 +526,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #131] chore(deps): audit npm dependencies for security and remove deprecations
 - **Timestamp:** `2026-11-09T19:24:25.141Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #132] chore(config): configure next.config.ts with strict mode and image domains
+- **Timestamp:** `2026-11-09T19:24:25.734Z`
+- **Target:** `D:/Project/Zaraz.app`
