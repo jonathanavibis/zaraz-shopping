@@ -30,3 +30,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #7] feat(storefront): implement FlashSaleSection with countdown timer and progress bars
 - **Timestamp:** `2026-11-09T19:23:16.932Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #8] feat(storefront): create CategoryGrid component showcasing departments with icons
+- **Timestamp:** `2026-11-09T19:23:17.428Z`
+- **Target:** `D:/Project/Zaraz.app`
