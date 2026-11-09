@@ -370,3 +370,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #92] docs(readme): document Next.js 16 App Router architecture and directory tree
 - **Timestamp:** `2026-11-09T19:24:01.411Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #93] docs(readme): add installation guide, environment variables, and run scripts
+- **Timestamp:** `2026-11-09T19:24:01.978Z`
+- **Target:** `D:/Project/Zaraz.app`
