@@ -10,3 +10,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #2] feat(storefront): configure Daraz-inspired green and obsidian matte dark theme
 - **Timestamp:** `2026-11-09T19:23:14.152Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #3] feat(storefront): create reusable responsive Navbar with search and category dropdown
+- **Timestamp:** `2026-11-09T19:23:14.771Z`
+- **Target:** `D:/Project/Zaraz.app`
