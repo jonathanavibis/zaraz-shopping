@@ -242,3 +242,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #60] fix(product-card): add image onerror fallback for broken Unsplash links
 - **Timestamp:** `2026-11-09T19:23:44.804Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #61] fix(product-card): ensure product link handles both MongoDB ObjectId and slug
+- **Timestamp:** `2026-11-09T19:23:45.296Z`
+- **Target:** `D:/Project/Zaraz.app`
