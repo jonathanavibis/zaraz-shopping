@@ -330,3 +330,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #82] refactor(layout): organize root layout metadata and font loading definitions
 - **Timestamp:** `2026-11-09T19:23:56.125Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #83] perf(images): configure remote Unsplash image domains in next.config.ts
+- **Timestamp:** `2026-11-09T19:23:56.619Z`
+- **Target:** `D:/Project/Zaraz.app`
