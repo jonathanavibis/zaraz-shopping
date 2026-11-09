@@ -66,3 +66,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #16] feat(catalog): implement no-products-found empty state with filter reset action
 - **Timestamp:** `2026-11-09T19:23:21.701Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #17] feat(product-details): create dynamic product details page at /products/[id]
+- **Timestamp:** `2026-11-09T19:23:22.203Z`
+- **Target:** `D:/Project/Zaraz.app`
