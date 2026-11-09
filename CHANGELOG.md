@@ -426,3 +426,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #106] test(filter): add unit test coverage for product search filtering
 - **Timestamp:** `2026-11-09T19:24:09.786Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #107] test(filter): add unit test coverage for category slug matching
+- **Timestamp:** `2026-11-09T19:24:10.459Z`
+- **Target:** `D:/Project/Zaraz.app`
