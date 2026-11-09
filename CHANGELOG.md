@@ -38,3 +38,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #9] feat(storefront): build ProductCard component with discount badges and official mall tags
 - **Timestamp:** `2026-11-09T19:23:17.903Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #10] feat(storefront): create DeliveryInfoBanner highlighting authentic guarantee and return policy
+- **Timestamp:** `2026-11-09T19:23:18.394Z`
+- **Target:** `D:/Project/Zaraz.app`
