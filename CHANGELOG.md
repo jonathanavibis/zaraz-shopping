@@ -394,3 +394,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #98] docs(changelog): initialize changelog recording storefront enhancements
 - **Timestamp:** `2026-11-09T19:24:04.881Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #99] docs(changelog): document v1.0.0 release notes and feature additions
+- **Timestamp:** `2026-11-09T19:24:05.523Z`
+- **Target:** `D:/Project/Zaraz.app`
