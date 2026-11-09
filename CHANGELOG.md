@@ -582,3 +582,7 @@ Automated changelog tracking production development milestones.
 ### refactor(modals): refine quick view modal keyboard accessibility handlers
 - Timestamp: 2026-11-10 01:24:47
 
+
+### perf(dom): optimize image layout shift with explicit aspect ratio wrappers
+- Timestamp: 2026-11-10 01:24:48
+
