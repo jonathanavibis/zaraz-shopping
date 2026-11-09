@@ -346,3 +346,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #86] perf(bundle): eliminate unused icons and reduce client bundle overhead
 - **Timestamp:** `2026-11-09T19:23:58.221Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #87] perf(rendering): optimize product filtering with memoized useMemo hooks
+- **Timestamp:** `2026-11-09T19:23:58.782Z`
+- **Target:** `D:/Project/Zaraz.app`
