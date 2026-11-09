@@ -222,3 +222,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #55] fix(cart): resolve NaN calculation issue when product originalPrice is missing
 - **Timestamp:** `2026-11-09T19:23:42.276Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #56] fix(hydration): guard against local storage hydration mismatch in CartContext
+- **Timestamp:** `2026-11-09T19:23:42.773Z`
+- **Target:** `D:/Project/Zaraz.app`
