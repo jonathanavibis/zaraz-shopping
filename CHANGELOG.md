@@ -318,3 +318,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #79] refactor(context): simplify AuthContext user profile persistence logic
 - **Timestamp:** `2026-11-09T19:23:54.636Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #80] refactor(utils): extract currency formatPrice helper in lib/utils.ts
+- **Timestamp:** `2026-11-09T19:23:55.135Z`
+- **Target:** `D:/Project/Zaraz.app`
