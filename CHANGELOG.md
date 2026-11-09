@@ -106,3 +106,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #26] feat(cart): calculate subtotal, shipping fees, promo discounts, and total BDT
 - **Timestamp:** `2026-11-09T19:23:26.807Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #27] feat(cart): implement item removal with confirmation feedback
+- **Timestamp:** `2026-11-09T19:23:27.488Z`
+- **Target:** `D:/Project/Zaraz.app`
