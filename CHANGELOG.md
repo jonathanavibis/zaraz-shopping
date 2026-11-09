@@ -210,3 +210,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #52] fix(api): automatically attach Bearer token to authenticated request headers
 - **Timestamp:** `2026-11-09T19:23:40.788Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #53] fix(api): detect production Vercel domain and auto-route to zaraz-server30
+- **Timestamp:** `2026-11-09T19:23:41.281Z`
+- **Target:** `D:/Project/Zaraz.app`
