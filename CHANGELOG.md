@@ -122,3 +122,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #30] feat(checkout): implement city and area selector for nationwide delivery calculation
 - **Timestamp:** `2026-11-09T19:23:29.312Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #31] feat(checkout): add payment method selection for Cash on Delivery, bKash, and Card
+- **Timestamp:** `2026-11-09T19:23:29.797Z`
+- **Target:** `D:/Project/Zaraz.app`
