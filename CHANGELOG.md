@@ -454,3 +454,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #113] test(components): verify DeliveryInfoBanner renders trust value propositions
 - **Timestamp:** `2026-11-09T19:24:14.166Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #114] style(theme): refine deep obsidian background palette tokens (#090d16)
+- **Timestamp:** `2026-11-09T19:24:14.739Z`
+- **Target:** `D:/Project/Zaraz.app`
