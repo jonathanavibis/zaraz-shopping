@@ -178,3 +178,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #44] feat(add-product): build merchant Add Product portal at /add-product
 - **Timestamp:** `2026-11-09T19:23:36.751Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #45] feat(add-product): add image URL preview and category selection dropdown
+- **Timestamp:** `2026-11-09T19:23:37.236Z`
+- **Target:** `D:/Project/Zaraz.app`
