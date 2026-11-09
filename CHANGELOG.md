@@ -306,3 +306,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #76] refactor(components): extract FlashSaleSection into standalone reusable component
 - **Timestamp:** `2026-11-09T19:23:52.942Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #77] refactor(components): extract DeliveryInfoBanner into standalone reusable component
+- **Timestamp:** `2026-11-09T19:23:53.433Z`
+- **Target:** `D:/Project/Zaraz.app`
