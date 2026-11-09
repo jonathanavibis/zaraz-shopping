@@ -90,3 +90,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #22] feat(product-details): build seller information card with merchant rating and response score
 - **Timestamp:** `2026-11-09T19:23:24.678Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #23] feat(product-details): add delivery fee and delivery timeline calculation widget
+- **Timestamp:** `2026-11-09T19:23:25.196Z`
+- **Target:** `D:/Project/Zaraz.app`
