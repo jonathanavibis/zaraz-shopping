@@ -262,3 +262,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #65] fix(details): handle 404 product not found state with friendly recovery link
 - **Timestamp:** `2026-11-09T19:23:47.279Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #66] fix(ui): resolve z-index conflict between mobile navbar and product gallery
+- **Timestamp:** `2026-11-09T19:23:47.763Z`
+- **Target:** `D:/Project/Zaraz.app`
