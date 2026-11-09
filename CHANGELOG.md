@@ -446,3 +446,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #111] test(checkout): add test case for required shipping field assertions
 - **Timestamp:** `2026-11-09T19:24:12.819Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #112] test(components): verify ProductCard renders discount percentage badge
+- **Timestamp:** `2026-11-09T19:24:13.579Z`
+- **Target:** `D:/Project/Zaraz.app`
