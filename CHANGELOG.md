@@ -406,3 +406,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #101] docs(security): document client-side token storage and route protection
 - **Timestamp:** `2026-11-09T19:24:06.701Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #102] test(utils): add unit test coverage for formatPrice currency formatter
+- **Timestamp:** `2026-11-09T19:24:07.302Z`
+- **Target:** `D:/Project/Zaraz.app`
