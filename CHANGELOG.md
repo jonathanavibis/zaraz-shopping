@@ -102,3 +102,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #25] feat(cart): build dedicated shopping cart page with item quantity management
 - **Timestamp:** `2026-11-09T19:23:26.262Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #26] feat(cart): calculate subtotal, shipping fees, promo discounts, and total BDT
+- **Timestamp:** `2026-11-09T19:23:26.807Z`
+- **Target:** `D:/Project/Zaraz.app`
