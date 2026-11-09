@@ -134,3 +134,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #33] feat(checkout): clear shopping cart upon successful order placement
 - **Timestamp:** `2026-11-09T19:23:30.926Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #34] feat(orders): create customer order history page at /orders
+- **Timestamp:** `2026-11-09T19:23:31.420Z`
+- **Target:** `D:/Project/Zaraz.app`
