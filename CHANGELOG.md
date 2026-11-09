@@ -386,3 +386,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #96] docs(context): document CartContext and AuthContext API specifications
 - **Timestamp:** `2026-11-09T19:24:03.660Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #97] docs(api): document apiRequest wrapper behavior and fallback mechanisms
+- **Timestamp:** `2026-11-09T19:24:04.255Z`
+- **Target:** `D:/Project/Zaraz.app`
