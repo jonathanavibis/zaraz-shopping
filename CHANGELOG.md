@@ -46,3 +46,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #11] feat(storefront): implement Zaraz Mall brand assurance trust section
 - **Timestamp:** `2026-11-09T19:23:19.002Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #12] feat(storefront): build comprehensive Footer with customer care links and payment badges
+- **Timestamp:** `2026-11-09T19:23:19.528Z`
+- **Target:** `D:/Project/Zaraz.app`
