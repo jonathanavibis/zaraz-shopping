@@ -142,3 +142,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #35] feat(orders): implement single order tracking page at /orders/[id]
 - **Timestamp:** `2026-11-09T19:23:31.933Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #36] feat(orders): build 5-stage visual delivery tracker timeline component
+- **Timestamp:** `2026-11-09T19:23:32.439Z`
+- **Target:** `D:/Project/Zaraz.app`
