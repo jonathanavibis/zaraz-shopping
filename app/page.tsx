@@ -29,27 +29,43 @@ function HomeContent() {
     setLocalSearch(searchParamQuery);
   }, [searchParamQuery]);
 
-  useEffect(() => {
-    async function loadData() {
-      try {
-        setLoading(true);
-        // Connect directly to backend (zaraz-server) -> MongoDB Atlas
-        const [prodData, catData, banData] = await Promise.all([
-          apiRequest("/products"),
-          apiRequest("/categories"),
-          apiRequest("/banners"),
-        ]);
+  const loadData = async (showSpinner = false) => {
+    try {
+      if (showSpinner) setLoading(true);
+      // Connect directly to backend (zaraz-server) -> MongoDB Atlas
+      const [prodData, catData, banData] = await Promise.all([
+        apiRequest("/products"),
+        apiRequest("/categories"),
+        apiRequest("/banners"),
+      ]);
 
-        if (prodData.success && prodData.products) setProducts(prodData.products);
-        if (catData.success && catData.categories) setCategories(catData.categories);
-        if (banData.success && banData.banners) setBanners(banData.banners);
-      } catch (e) {
-        console.error(e);
-      } finally {
-        setLoading(false);
-      }
+      if (prodData.success && prodData.products) setProducts(prodData.products);
+      if (catData.success && catData.categories) setCategories(catData.categories);
+      if (banData.success && banData.banners) setBanners(banData.banners);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      if (showSpinner) setLoading(false);
     }
-    loadData();
+  };
+
+  useEffect(() => {
+    loadData(true);
+
+    const handleFocus = () => {
+      loadData(false);
+    };
+
+    window.addEventListener("focus", handleFocus);
+    // Background polling every 20 seconds to guarantee live two-way data sync
+    const interval = setInterval(() => {
+      loadData(false);
+    }, 20000);
+
+    return () => {
+      window.removeEventListener("focus", handleFocus);
+      clearInterval(interval);
+    };
   }, []);
 
   // Filter & Sort Logic
