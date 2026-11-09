@@ -542,3 +542,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #135] chore(config): update .gitignore excluding node_modules and .next directories
 - **Timestamp:** `2026-11-09T19:24:27.664Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #136] chore(env): document NEXT_PUBLIC_SERVER_URL environment variable in .env.example
+- **Timestamp:** `2026-11-09T19:24:28.263Z`
+- **Target:** `D:/Project/Zaraz.app`
