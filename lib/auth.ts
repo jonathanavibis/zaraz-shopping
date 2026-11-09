@@ -51,7 +51,7 @@ const getBaseUrl = () => {
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
-  return "https://zaraz.vercel.app";
+  return "https://zaraz-shopping.vercel.app";
 };
 
 export const auth = betterAuth({
