@@ -410,3 +410,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #102] test(utils): add unit test coverage for formatPrice currency formatter
 - **Timestamp:** `2026-11-09T19:24:07.302Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #103] test(cart): add unit test coverage for cart total calculation logic
+- **Timestamp:** `2026-11-09T19:24:07.888Z`
+- **Target:** `D:/Project/Zaraz.app`
