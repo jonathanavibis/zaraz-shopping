@@ -566,3 +566,7 @@ Automated changelog tracking production development milestones.
 ### fix(search): prevent form submit default behavior on enter in search bar
 - Timestamp: 2026-11-10 01:24:45
 
+
+### perf(router): enable instant prefetching for top navigation department links
+- Timestamp: 2026-11-10 01:24:46
+
