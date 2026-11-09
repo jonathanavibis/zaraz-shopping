@@ -114,3 +114,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #28] feat(cart): add continue shopping quick link back to product catalog
 - **Timestamp:** `2026-11-09T19:23:28.207Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #29] feat(checkout): create multi-step checkout page with customer shipping form
+- **Timestamp:** `2026-11-09T19:23:28.786Z`
+- **Target:** `D:/Project/Zaraz.app`
