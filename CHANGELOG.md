@@ -54,3 +54,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #13] feat(catalog): implement live product search with instant debounced query filtering
 - **Timestamp:** `2026-11-09T19:23:20.127Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #14] feat(catalog): add department category filtering with active tab indicator
+- **Timestamp:** `2026-11-09T19:23:20.665Z`
+- **Target:** `D:/Project/Zaraz.app`
