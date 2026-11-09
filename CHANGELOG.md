@@ -22,3 +22,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #5] feat(storefront): implement AuthContext provider managing JWT token and user profile
 - **Timestamp:** `2026-11-09T19:23:15.863Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #6] feat(storefront): create HeroBanner carousel supporting dynamic promotional banners
+- **Timestamp:** `2026-11-09T19:23:16.450Z`
+- **Target:** `D:/Project/Zaraz.app`
