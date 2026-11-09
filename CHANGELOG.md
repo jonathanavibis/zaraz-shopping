@@ -594,3 +594,7 @@ Automated changelog tracking production development milestones.
 ### style(theme): enhance mobile bottom navigation bar active pill glow
 - Timestamp: 2026-11-10 01:24:49
 
+
+### chore(release): bump storefront release version to v1.2.5
+- Timestamp: 2026-11-10 01:24:50
+
