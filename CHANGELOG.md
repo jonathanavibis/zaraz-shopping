@@ -218,3 +218,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #54] fix(cart): prevent negative quantity values in cart quantity modifier
 - **Timestamp:** `2026-11-09T19:23:41.765Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #55] fix(cart): resolve NaN calculation issue when product originalPrice is missing
+- **Timestamp:** `2026-11-09T19:23:42.276Z`
+- **Target:** `D:/Project/Zaraz.app`
