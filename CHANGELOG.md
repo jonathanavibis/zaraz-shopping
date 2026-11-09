@@ -470,3 +470,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #117] style(theme): fine-tune mint green accent badges and icons (#34d399)
 - **Timestamp:** `2026-11-09T19:24:16.563Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #118] style(theme): adjust card border subtle contrast to match backend server
+- **Timestamp:** `2026-11-09T19:24:17.151Z`
+- **Target:** `D:/Project/Zaraz.app`
