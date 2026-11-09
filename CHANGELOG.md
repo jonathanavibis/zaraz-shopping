@@ -298,3 +298,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #74] refactor(components): extract CategoryGrid into standalone reusable component
 - **Timestamp:** `2026-11-09T19:23:51.819Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #75] refactor(components): extract HeroBanner into standalone reusable component
+- **Timestamp:** `2026-11-09T19:23:52.329Z`
+- **Target:** `D:/Project/Zaraz.app`
