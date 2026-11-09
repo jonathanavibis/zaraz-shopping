@@ -270,3 +270,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #67] fix(ui): correct currency formatting displaying BDT symbol and thousand separators
 - **Timestamp:** `2026-11-09T19:23:48.255Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #68] fix(ui): fix overflow clipping on category pill horizontal scrollbar
+- **Timestamp:** `2026-11-09T19:23:48.735Z`
+- **Target:** `D:/Project/Zaraz.app`
