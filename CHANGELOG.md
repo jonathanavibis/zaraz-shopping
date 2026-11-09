@@ -74,3 +74,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #18] feat(product-details): implement multi-image thumbnail gallery with zoom preview
 - **Timestamp:** `2026-11-09T19:23:22.687Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #19] feat(product-details): add interactive quantity increment and decrement selector
+- **Timestamp:** `2026-11-09T19:23:23.199Z`
+- **Target:** `D:/Project/Zaraz.app`
