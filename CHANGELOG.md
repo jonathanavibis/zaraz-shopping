@@ -378,3 +378,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #94] docs(readme): document two-way sync integration with zaraz-server backend
 - **Timestamp:** `2026-11-09T19:24:02.478Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #95] docs(components): add component documentation for HeroBanner and ProductCard
+- **Timestamp:** `2026-11-09T19:24:03.066Z`
+- **Target:** `D:/Project/Zaraz.app`
