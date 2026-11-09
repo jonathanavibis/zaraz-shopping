@@ -150,3 +150,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #37] feat(orders): display order summary receipt with item breakdown and invoice number
 - **Timestamp:** `2026-11-09T19:23:32.930Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #38] feat(auth): create modern login page with email and password fields
+- **Timestamp:** `2026-11-09T19:23:33.641Z`
+- **Target:** `D:/Project/Zaraz.app`
