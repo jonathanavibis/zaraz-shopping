@@ -546,3 +546,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #136] chore(env): document NEXT_PUBLIC_SERVER_URL environment variable in .env.example
 - **Timestamp:** `2026-11-09T19:24:28.263Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #137] chore(seo): add OpenGraph metadata and search engine indexing directives
+- **Timestamp:** `2026-11-09T19:24:28.871Z`
+- **Target:** `D:/Project/Zaraz.app`
