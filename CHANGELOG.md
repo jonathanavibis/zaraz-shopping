@@ -442,3 +442,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #110] test(auth): add unit test coverage for password minimum length validation
 - **Timestamp:** `2026-11-09T19:24:12.247Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #111] test(checkout): add test case for required shipping field assertions
+- **Timestamp:** `2026-11-09T19:24:12.819Z`
+- **Target:** `D:/Project/Zaraz.app`
