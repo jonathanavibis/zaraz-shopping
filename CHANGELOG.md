@@ -482,3 +482,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #120] style(navbar): enhance cart badge counter pulse animation
 - **Timestamp:** `2026-11-09T19:24:18.321Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #121] style(buttons): optimize emerald button hover elevation and drop shadow
+- **Timestamp:** `2026-11-09T19:24:18.904Z`
+- **Target:** `D:/Project/Zaraz.app`
