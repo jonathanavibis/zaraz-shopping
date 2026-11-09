@@ -362,3 +362,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #90] perf(cache): bypass browser HTTP cache for real-time inventory freshness
 - **Timestamp:** `2026-11-09T19:24:00.405Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #91] docs(readme): add comprehensive project description and feature breakdown
+- **Timestamp:** `2026-11-09T19:24:00.902Z`
+- **Target:** `D:/Project/Zaraz.app`
