@@ -338,3 +338,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #84] perf(images): add lazy loading attributes to below-the-fold product cards
 - **Timestamp:** `2026-11-09T19:23:57.133Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #85] perf(fonts): load Plus Jakarta Sans and JetBrains Mono with font optimization
+- **Timestamp:** `2026-11-09T19:23:57.619Z`
+- **Target:** `D:/Project/Zaraz.app`
