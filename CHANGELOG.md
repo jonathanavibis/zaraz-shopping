@@ -502,3 +502,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #125] style(responsive): optimize product card grid columns for mobile screens
 - **Timestamp:** `2026-11-09T19:24:21.476Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #126] style(responsive): adjust checkout layout from two columns to stacked on mobile
+- **Timestamp:** `2026-11-09T19:24:22.067Z`
+- **Target:** `D:/Project/Zaraz.app`
