@@ -522,3 +522,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #130] chore(deps): verify Tailwind CSS v4 compatibility and utility directives
 - **Timestamp:** `2026-11-09T19:24:24.545Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #131] chore(deps): audit npm dependencies for security and remove deprecations
+- **Timestamp:** `2026-11-09T19:24:25.141Z`
+- **Target:** `D:/Project/Zaraz.app`
