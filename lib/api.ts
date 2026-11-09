@@ -19,6 +19,7 @@ export async function apiRequest<T = any>(
   // Primary: Connect to zaraz-server (Express + MongoDB Atlas)
   try {
     const res = await fetch(`${BACKEND_URL}${cleanEndpoint}`, {
+      cache: "no-store",
       ...options,
       headers: {
         Accept: "application/json",
