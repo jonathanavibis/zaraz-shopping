@@ -254,3 +254,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #63] fix(checkout): validate shipping address completeness before order submission
 - **Timestamp:** `2026-11-09T19:23:46.269Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #64] fix(orders): handle empty orders state gracefully with link to catalog
+- **Timestamp:** `2026-11-09T19:23:46.769Z`
+- **Target:** `D:/Project/Zaraz.app`
