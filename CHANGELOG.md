@@ -354,3 +354,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #88] perf(network): execute simultaneous Promise.all fetches for catalog and banners
 - **Timestamp:** `2026-11-09T19:23:59.297Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #89] perf(network): prevent duplicate fetch calls during fast route transitions
+- **Timestamp:** `2026-11-09T19:23:59.793Z`
+- **Target:** `D:/Project/Zaraz.app`
