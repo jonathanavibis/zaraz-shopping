@@ -486,3 +486,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #121] style(buttons): optimize emerald button hover elevation and drop shadow
 - **Timestamp:** `2026-11-09T19:24:18.904Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #122] style(cards): add smooth scale transition on product card image hover
+- **Timestamp:** `2026-11-09T19:24:19.603Z`
+- **Target:** `D:/Project/Zaraz.app`
