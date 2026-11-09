@@ -78,3 +78,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #19] feat(product-details): add interactive quantity increment and decrement selector
 - **Timestamp:** `2026-11-09T19:23:23.199Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #20] feat(product-details): add instant Buy Now button routing directly to checkout
+- **Timestamp:** `2026-11-09T19:23:23.692Z`
+- **Target:** `D:/Project/Zaraz.app`
