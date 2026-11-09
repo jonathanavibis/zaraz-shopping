@@ -174,3 +174,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #43] feat(auth): implement logout action clearing tokens and resetting user context
 - **Timestamp:** `2026-11-09T19:23:36.153Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #44] feat(add-product): build merchant Add Product portal at /add-product
+- **Timestamp:** `2026-11-09T19:23:36.751Z`
+- **Target:** `D:/Project/Zaraz.app`
