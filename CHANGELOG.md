@@ -86,3 +86,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #21] feat(product-details): create Add to Cart action with toast notification feedback
 - **Timestamp:** `2026-11-09T19:23:24.194Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #22] feat(product-details): build seller information card with merchant rating and response score
+- **Timestamp:** `2026-11-09T19:23:24.678Z`
+- **Target:** `D:/Project/Zaraz.app`
