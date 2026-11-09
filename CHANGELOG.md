@@ -506,3 +506,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #126] style(responsive): adjust checkout layout from two columns to stacked on mobile
 - **Timestamp:** `2026-11-09T19:24:22.067Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #127] style(animations): add smooth fade-in transitions on banner slide change
+- **Timestamp:** `2026-11-09T19:24:22.702Z`
+- **Target:** `D:/Project/Zaraz.app`
