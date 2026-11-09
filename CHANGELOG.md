@@ -94,3 +94,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #23] feat(product-details): add delivery fee and delivery timeline calculation widget
 - **Timestamp:** `2026-11-09T19:23:25.196Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #24] feat(product-details): create specifications table rendering authentic brand warranty details
+- **Timestamp:** `2026-11-09T19:23:25.750Z`
+- **Target:** `D:/Project/Zaraz.app`
