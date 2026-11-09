@@ -538,3 +538,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #134] chore(config): configure postcss and tailwindcss build configuration
 - **Timestamp:** `2026-11-09T19:24:27.061Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #135] chore(config): update .gitignore excluding node_modules and .next directories
+- **Timestamp:** `2026-11-09T19:24:27.664Z`
+- **Target:** `D:/Project/Zaraz.app`
