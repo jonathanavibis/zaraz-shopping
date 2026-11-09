@@ -266,3 +266,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #66] fix(ui): resolve z-index conflict between mobile navbar and product gallery
 - **Timestamp:** `2026-11-09T19:23:47.763Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #67] fix(ui): correct currency formatting displaying BDT symbol and thousand separators
+- **Timestamp:** `2026-11-09T19:23:48.255Z`
+- **Target:** `D:/Project/Zaraz.app`
