@@ -250,3 +250,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #62] fix(checkout): validate telephone number required field before order submission
 - **Timestamp:** `2026-11-09T19:23:45.780Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #63] fix(checkout): validate shipping address completeness before order submission
+- **Timestamp:** `2026-11-09T19:23:46.269Z`
+- **Target:** `D:/Project/Zaraz.app`
