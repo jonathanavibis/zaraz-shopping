@@ -62,3 +62,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #15] feat(catalog): add price sorting options (low-to-high, high-to-low, customer rating)
 - **Timestamp:** `2026-11-09T19:23:21.170Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #16] feat(catalog): implement no-products-found empty state with filter reset action
+- **Timestamp:** `2026-11-09T19:23:21.701Z`
+- **Target:** `D:/Project/Zaraz.app`
