@@ -182,3 +182,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #45] feat(add-product): add image URL preview and category selection dropdown
 - **Timestamp:** `2026-11-09T19:23:37.236Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #46] feat(add-product): auto-calculate discount percentage from original price input
+- **Timestamp:** `2026-11-09T19:23:37.719Z`
+- **Target:** `D:/Project/Zaraz.app`
