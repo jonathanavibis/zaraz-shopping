@@ -158,3 +158,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #39] feat(auth): create user registration page with real-time password strength validation
 - **Timestamp:** `2026-11-09T19:23:34.165Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #40] feat(auth): implement Google OAuth social sign-in integration
+- **Timestamp:** `2026-11-09T19:23:34.663Z`
+- **Target:** `D:/Project/Zaraz.app`
