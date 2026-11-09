@@ -490,3 +490,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #122] style(cards): add smooth scale transition on product card image hover
 - **Timestamp:** `2026-11-09T19:24:19.603Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #123] style(badges): polish Daraz-style discount tag gradient and font weight
+- **Timestamp:** `2026-11-09T19:24:20.265Z`
+- **Target:** `D:/Project/Zaraz.app`
