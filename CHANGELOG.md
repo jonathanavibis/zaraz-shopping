@@ -214,3 +214,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #53] fix(api): detect production Vercel domain and auto-route to zaraz-server30
 - **Timestamp:** `2026-11-09T19:23:41.281Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #54] fix(cart): prevent negative quantity values in cart quantity modifier
+- **Timestamp:** `2026-11-09T19:23:41.765Z`
+- **Target:** `D:/Project/Zaraz.app`
