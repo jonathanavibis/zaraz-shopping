@@ -358,3 +358,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #89] perf(network): prevent duplicate fetch calls during fast route transitions
 - **Timestamp:** `2026-11-09T19:23:59.793Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #90] perf(cache): bypass browser HTTP cache for real-time inventory freshness
+- **Timestamp:** `2026-11-09T19:24:00.405Z`
+- **Target:** `D:/Project/Zaraz.app`
