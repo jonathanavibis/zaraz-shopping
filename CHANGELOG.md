@@ -374,3 +374,7 @@ Automated changelog tracking production development milestones.
 ### [Commit #93] docs(readme): add installation guide, environment variables, and run scripts
 - **Timestamp:** `2026-11-09T19:24:01.978Z`
 - **Target:** `D:/Project/Zaraz.app`
+
+### [Commit #94] docs(readme): document two-way sync integration with zaraz-server backend
+- **Timestamp:** `2026-11-09T19:24:02.478Z`
+- **Target:** `D:/Project/Zaraz.app`
