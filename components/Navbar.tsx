@@ -15,9 +15,12 @@ import {
   LogOut,
   Package,
   PlusCircle,
+  ChevronRight,
+  Sparkles,
 } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
+import CategoryMenu, { CATEGORIES_DATA } from "@/components/CategoryMenu";
 
 export default function Navbar() {
   const router = useRouter();
@@ -26,6 +29,7 @@ export default function Navbar() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileCategoriesOpen, setMobileCategoriesOpen] = useState(true);
   const [userDropdown, setUserDropdown] = useState(false);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -219,13 +223,130 @@ export default function Navbar() {
         </form>
       </div>
 
-      {/* Navigation Sub-Bar */}
-      <nav className="bg-[#0b142d]/80 border-t border-emerald-950/80 px-4 py-2">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm overflow-x-auto whitespace-nowrap scrollbar-none">
-          <div className="flex items-center space-x-6 text-gray-300">
-            <Link href="/#categories" className="flex items-center gap-1 font-semibold text-emerald-400 hover:text-emerald-300">
-              <Menu className="w-4 h-4" /> Categories
+      {/* Mobile Drawer (Expandable Menu & Daraz Categories) */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-[#070e17] border-t border-emerald-950/80 px-4 py-4 space-y-4 max-h-[80vh] overflow-y-auto">
+          {/* Quick Nav Links */}
+          <div className="grid grid-cols-2 gap-2 pb-3 border-b border-gray-800/80">
+            <Link
+              href="/#flash-sale"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold text-xs"
+            >
+              <Zap className="w-4 h-4 fill-amber-400" /> Flash Sale Deals
             </Link>
+            <Link
+              href="/#products"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold text-xs"
+            >
+              <ShieldCheck className="w-4 h-4" /> Zaraz Mall
+            </Link>
+            <Link
+              href="/orders"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 p-2.5 rounded-xl bg-[#111e2f] border border-gray-800 text-gray-200 text-xs font-semibold"
+            >
+              <Package className="w-4 h-4 text-emerald-400" /> Track Orders
+            </Link>
+            <Link
+              href="/add-product"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 p-2.5 rounded-xl bg-emerald-950/40 border border-emerald-800/60 text-emerald-300 text-xs font-semibold"
+            >
+              <PlusCircle className="w-4 h-4 text-emerald-400" /> Sell on Zaraz
+            </Link>
+          </div>
+
+          {/* Categories Accordion */}
+          <div>
+            <button
+              type="button"
+              onClick={() => setMobileCategoriesOpen(!mobileCategoriesOpen)}
+              className="w-full flex items-center justify-between text-xs font-black uppercase tracking-wider text-emerald-400 mb-2 py-1"
+            >
+              <span className="flex items-center gap-1.5">
+                <Menu className="w-4 h-4" /> All Categories (Daraz Style)
+              </span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  mobileCategoriesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {mobileCategoriesOpen && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1">
+                {CATEGORIES_DATA.map((cat) => {
+                  const Icon = cat.icon;
+                  return (
+                    <Link
+                      key={cat.id}
+                      href={`/categories/${cat.slug}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-[#0b1420] border border-gray-800/80 hover:border-emerald-500/40 text-xs text-gray-200 hover:text-white transition"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-7 h-7 rounded-lg bg-[#111e2f] text-emerald-400 flex items-center justify-center">
+                          <Icon className="w-3.5 h-3.5" />
+                        </div>
+                        <span className="font-medium truncate">{cat.name}</span>
+                      </div>
+                      <span className="text-[10px] text-gray-500">{cat.itemCount} items</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {/* User Sign In / Out */}
+          <div className="pt-3 border-t border-gray-800/80">
+            {user ? (
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs text-gray-400">Signed in as</p>
+                  <p className="text-sm font-bold text-white truncate">{user.name}</p>
+                </div>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    logout();
+                  }}
+                  className="px-3 py-1.5 bg-red-950/40 border border-red-800/60 text-red-400 text-xs font-semibold rounded-lg flex items-center gap-1.5"
+                >
+                  <LogOut className="w-3.5 h-3.5" /> Sign Out
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-2">
+                <Link
+                  href="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="py-2.5 text-center text-xs font-bold text-emerald-300 bg-[#111e2f] border border-emerald-900/80 rounded-lg"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/register"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="py-2.5 text-center text-xs font-black text-black bg-emerald-500 rounded-lg shadow-md"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Navigation Sub-Bar */}
+      <nav className="bg-[#0b142d]/80 border-t border-emerald-950/80 px-4 py-1.5">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
+          <div className="flex items-center space-x-6 text-gray-300">
+            {/* Daraz-Style Categories Mega Menu Button */}
+            <CategoryMenu />
+
             <Link href="/#flash-sale" className="flex items-center gap-1 font-bold text-amber-400 hover:text-amber-300">
               <Zap className="w-4 h-4 fill-amber-400" /> Flash Sale
             </Link>
