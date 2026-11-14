@@ -24,20 +24,53 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+/* Modern Minimalist Glassmorphic Emerald Scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16, 185, 129, 0.35) transparent;
+}
+
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #059669;
-  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  transition: all 0.2s ease;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #10b981;
+  background: rgba(16, 185, 129, 0.75);
+  border-color: rgba(52, 211, 153, 0.5);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Scrollbar Hide Utilities (Keeps container smoothly scrollable while completely hiding scrollbar) */
+.scrollbar-none,
+.no-scrollbar,
+.scrollbar-hide {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+.scrollbar-none::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* Daraz Flash Sale Pulse */

@@ -225,7 +225,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer (Expandable Menu & Daraz Categories) */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#070e17] border-t border-emerald-950/80 px-4 py-4 space-y-4 max-h-[80vh] overflow-y-auto">
+        <div className="md:hidden bg-[#070e17] border-t border-emerald-950/80 px-4 py-4 space-y-4 max-h-[80vh] overflow-y-auto scrollbar-none">
           {/* Quick Nav Links */}
           <div className="grid grid-cols-2 gap-2 pb-3 border-b border-gray-800/80">
             <Link

@@ -121,7 +121,7 @@ export default function OrdersPage() {
 
                 {/* Items row */}
                 <div className="py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div className="flex items-center gap-3 overflow-x-auto">
+                  <div className="flex items-center gap-3 overflow-x-auto scrollbar-none">
                     {order.items?.slice(0, 4).map((item: any, idx: number) => (
                       <img
                         key={idx}

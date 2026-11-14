@@ -93,7 +93,7 @@ export default function ProductDetailsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
       {/* Breadcrumb */}
-      <nav className="flex items-center space-x-2 text-xs text-gray-400 mb-6 overflow-x-auto">
+      <nav className="flex items-center space-x-2 text-xs text-gray-400 mb-6 overflow-x-auto scrollbar-none">
         <Link href="/" className="hover:text-emerald-400">Home</Link>
         <ChevronRight className="w-3.5 h-3.5" />
         <Link href={`/categories/${product.categorySlug}`} className="hover:text-emerald-400">
@@ -126,7 +126,7 @@ export default function ProductDetailsPage() {
 
           {/* Thumbnails */}
           {product.images && product.images.length > 1 && (
-            <div className="flex gap-3 overflow-x-auto pb-2">
+            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none">
               {product.images.map((img, idx) => (
                 <button
                   key={idx}
