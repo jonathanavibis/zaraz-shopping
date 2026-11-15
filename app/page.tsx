@@ -105,44 +105,41 @@ function HomeContent() {
       <CategoryGrid categories={categories} />
 
       {/* Zaraz Mall Banner */}
-      <div className="max-w-7xl mx-auto px-4 my-6">
-        <div className="bg-[#0b1622] border border-emerald-900/60 rounded-2xl p-5 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 my-4 sm:my-6">
+        <div className="bg-[#0b1622] border border-emerald-900/60 rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-lg">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
-              <ShieldCheck className="w-7 h-7" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 flex-shrink-0">
+              <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xl font-black text-white">Zaraz Mall</span>
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500 text-black">
+                <span className="text-lg sm:text-xl font-black text-white">Zaraz Mall</span>
+                <span className="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-bold bg-emerald-500 text-black">
                   100% AUTHENTIC
                 </span>
               </div>
-              <p className="text-xs text-gray-400 mt-0.5">
-                Official Stores &bull; 14-Day Hassle-Free Return &bull; 100% Genuine Brands
+              <p className="text-[11px] sm:text-xs text-gray-400 mt-0.5">
+                Official Stores &bull; 14-Day Free Return &bull; 100% Genuine BD Warranty
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 text-xs">
-            <span className="text-gray-300 hidden sm:inline">Certified Partners:</span>
-            <span className="font-bold text-emerald-400">Apple</span>
-            <span className="text-gray-600">&bull;</span>
-            <span className="font-bold text-emerald-400">Sony</span>
-            <span className="text-gray-600">&bull;</span>
-            <span className="font-bold text-emerald-400">Samsung</span>
-            <span className="text-gray-600">&bull;</span>
-            <span className="font-bold text-emerald-400">Philips</span>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs">
+            <span className="text-gray-400 text-[11px]">Certified Partners:</span>
+            <span className="font-bold text-emerald-400 bg-[#070e17] px-2 py-0.5 rounded border border-gray-800">Apple</span>
+            <span className="font-bold text-emerald-400 bg-[#070e17] px-2 py-0.5 rounded border border-gray-800">Sony</span>
+            <span className="font-bold text-emerald-400 bg-[#070e17] px-2 py-0.5 rounded border border-gray-800">Samsung</span>
+            <span className="font-bold text-emerald-400 bg-[#070e17] px-2 py-0.5 rounded border border-gray-800">Philips</span>
           </div>
         </div>
       </div>
 
       {/* Just For You / Main Catalog */}
-      <section id="products" className="max-w-7xl mx-auto px-4 py-8">
+      <section id="products" className="max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
           <div>
-            <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+            <h2 className="text-lg sm:text-2xl font-black text-white flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-emerald-400" />
               Just For You
             </h2>
@@ -152,7 +149,7 @@ function HomeContent() {
           </div>
 
           {/* Sort Selector */}
-          <div className="flex items-center gap-2 self-start md:self-auto">
+          <div className="flex items-center gap-2 self-start sm:self-auto">
             <SlidersHorizontal className="w-4 h-4 text-gray-400" />
             <span className="text-xs text-gray-400">Sort by:</span>
             <select
@@ -169,10 +166,10 @@ function HomeContent() {
         </div>
 
         {/* Category Pill Filters */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 scrollbar-none mb-6">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 sm:pb-4 scrollbar-none mb-5 sm:mb-6">
           <button
             onClick={() => setSelectedCategory("all")}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap ${
+            className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition whitespace-nowrap ${
               selectedCategory === "all"
                 ? "bg-emerald-500 text-black shadow-md shadow-emerald-950/60"
                 : "bg-[#0d1420] text-gray-300 hover:text-white border border-gray-800"
@@ -184,7 +181,7 @@ function HomeContent() {
             <button
               key={c.id || c.slug}
               onClick={() => setSelectedCategory(c.slug)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap ${
+              className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition whitespace-nowrap ${
                 selectedCategory === c.slug
                   ? "bg-emerald-500 text-black shadow-md shadow-emerald-950/60"
                   : "bg-[#0d1420] text-gray-300 hover:text-white border border-gray-800"
@@ -244,7 +241,7 @@ function HomeContent() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
             {sortedProducts.map((product) => (
               <ProductCard key={product.id || (product as any)._id || product.slug} product={product} />
             ))}

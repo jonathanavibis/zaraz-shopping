@@ -66,7 +66,7 @@ export default function CategoryPage() {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-3 sm:px-4 py-5 sm:py-8 pb-24 md:pb-8">
       {/* Breadcrumb */}
       <nav className="flex items-center space-x-2 text-xs text-gray-400 mb-6">
         <Link href="/" className="hover:text-emerald-400">Home</Link>
@@ -233,7 +233,7 @@ export default function CategoryPage() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6">
               {sortedProducts.map((product) => (
                 <ProductCard key={product.id || (product as any)._id || product.slug} product={product} />
               ))}

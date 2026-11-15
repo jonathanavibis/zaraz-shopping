@@ -22,6 +22,9 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Modern Minimalist Glassmorphic Emerald Scrollbar */
@@ -100,4 +103,20 @@ html {
 .product-card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px -10px rgba(16, 185, 129, 0.25);
+}
+
+/* Mobile Safe Area Padding */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Obsidian Glass Card */
+.glass-obsidian {
+  background: rgba(11, 20, 32, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.15);
 }

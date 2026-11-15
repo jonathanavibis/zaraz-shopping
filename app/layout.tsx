@@ -4,6 +4,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileBottomNav from "@/components/MobileBottomNav";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
@@ -41,8 +42,9 @@ export default function RootLayout({
               }}
             />
             <Navbar />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 pb-16 md:pb-0">{children}</main>
             <Footer />
+            <MobileBottomNav />
           </CartProvider>
         </AuthProvider>
       </body>

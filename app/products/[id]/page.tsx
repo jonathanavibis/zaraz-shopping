@@ -91,7 +91,7 @@ export default function ProductDetailsPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6">
+    <div className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6 pb-28 md:pb-8">
       {/* Breadcrumb */}
       <nav className="flex items-center space-x-2 text-xs text-gray-400 mb-6 overflow-x-auto scrollbar-none">
         <Link href="/" className="hover:text-emerald-400">Home</Link>
@@ -428,6 +428,32 @@ export default function ProductDetailsPage() {
             className="mt-4 w-full py-2.5 rounded-xl border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-black font-bold text-xs transition"
           >
             Write a Review
+          </button>
+        </div>
+      </div>
+
+      {/* Sticky Mobile Purchase Action Bar */}
+      <div className="md:hidden fixed bottom-14 left-0 right-0 z-40 bg-[#070e17]/95 backdrop-blur-xl border-t border-emerald-950/90 px-3.5 py-2.5 flex items-center justify-between gap-3 shadow-[0_-8px_25px_rgba(0,0,0,0.6)]">
+        <div className="flex flex-col">
+          <span className="text-[10px] text-gray-400">Total Price</span>
+          <span className="text-base font-black text-emerald-400 leading-tight">
+            {formatPrice(product.price * quantity)}
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => addToCart(product, quantity)}
+            className="py-2.5 px-3 rounded-xl bg-emerald-950/90 border border-emerald-700 text-emerald-300 font-bold text-xs flex items-center gap-1.5 active:scale-95 transition"
+          >
+            <ShoppingCart className="w-3.5 h-3.5" />
+            <span>Cart</span>
+          </button>
+          <button
+            onClick={handleBuyNow}
+            className="py-2.5 px-4 rounded-xl bg-emerald-500 text-black font-extrabold text-xs flex items-center gap-1.5 shadow-lg shadow-emerald-950/80 active:scale-95 transition"
+          >
+            <Zap className="w-3.5 h-3.5 fill-black" />
+            <span>Buy Now</span>
           </button>
         </div>
       </div>

@@ -42,8 +42,8 @@ function RegisterForm() {
   };
 
   return (
-    <div className="min-h-[85vh] flex items-center justify-center px-4 py-12">
-      <div className="max-w-md w-full bg-[#0b1420] border border-emerald-950/80 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+    <div className="min-h-[85vh] flex items-center justify-center px-3 sm:px-4 py-8 sm:py-12 pb-24 md:pb-12">
+      <div className="max-w-md w-full bg-[#0b1420] border border-emerald-950/80 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl relative overflow-hidden">
         {/* Glow */}
         <div className="absolute -top-12 -left-12 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
 

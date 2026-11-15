@@ -49,20 +49,22 @@ export default function CategoryGrid({ categories }: CategoryGridProps) {
         </Link>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+      <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-3">
         {categories.map((cat) => (
           <Link
             key={cat.id}
             href={`/categories/${cat.slug}`}
-            className="group bg-[#0d1420] border border-emerald-950/70 hover:border-emerald-500/60 rounded-2xl p-4 flex flex-col items-center text-center transition duration-200 hover:shadow-lg hover:shadow-emerald-950/40 hover:-translate-y-1"
+            className="group bg-[#0d1420] border border-emerald-950/70 hover:border-emerald-500/60 rounded-xl sm:rounded-2xl p-2 sm:p-4 flex flex-col items-center text-center transition duration-200 hover:shadow-lg hover:shadow-emerald-950/40 hover:-translate-y-0.5 sm:hover:-translate-y-1"
           >
-            <div className="w-14 h-14 rounded-2xl bg-[#111c2e] group-hover:bg-emerald-600/20 border border-emerald-900/40 group-hover:border-emerald-500/40 flex items-center justify-center mb-3 transition duration-300">
-              {iconMap[cat.icon] || <Sparkles className="w-6 h-6 text-emerald-400" />}
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#111c2e] group-hover:bg-emerald-600/20 border border-emerald-900/40 group-hover:border-emerald-500/40 flex items-center justify-center mb-1.5 sm:mb-3 transition duration-300">
+              <span className="scale-75 sm:scale-100">
+                {iconMap[cat.icon] || <Sparkles className="w-6 h-6 text-emerald-400" />}
+              </span>
             </div>
-            <h3 className="text-xs font-semibold text-gray-200 group-hover:text-emerald-300 transition line-clamp-2">
+            <h3 className="text-[10px] sm:text-xs font-semibold text-gray-200 group-hover:text-emerald-300 transition line-clamp-2 leading-tight">
               {cat.name}
             </h3>
-            <span className="text-[10px] text-gray-500 mt-1 font-medium">
+            <span className="hidden sm:inline-block text-[10px] text-gray-500 mt-1 font-medium">
               {cat.itemCount}+ items
             </span>
           </Link>

@@ -12,47 +12,47 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#070b12] text-gray-400 border-t border-emerald-950/80 mt-16 pt-12 pb-8">
+    <footer className="bg-[#070b12] text-gray-400 border-t border-emerald-950/80 mt-10 sm:mt-16 pt-8 sm:pt-12 pb-24 md:pb-8">
       <div className="max-w-7xl mx-auto px-4">
         {/* Top 4 Value Badges */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 border-b border-gray-800">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pb-8 sm:pb-12 border-b border-gray-800">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-emerald-950/60 border border-emerald-900/60 flex items-center justify-center flex-shrink-0 text-emerald-400">
-              <Truck className="w-6 h-6" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-950/60 border border-emerald-900/60 flex items-center justify-center flex-shrink-0 text-emerald-400">
+              <Truck className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h4 className="text-white font-bold text-sm">Nationwide Delivery</h4>
-              <p className="text-xs text-gray-400">Fast 2-3 days shipping across BD</p>
+              <h4 className="text-white font-bold text-xs sm:text-sm">Nationwide Delivery</h4>
+              <p className="text-[11px] sm:text-xs text-gray-400">Fast 2-3 days shipping across BD</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-emerald-950/60 border border-emerald-900/60 flex items-center justify-center flex-shrink-0 text-emerald-400">
-              <CreditCard className="w-6 h-6" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-950/60 border border-emerald-900/60 flex items-center justify-center flex-shrink-0 text-emerald-400">
+              <CreditCard className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h4 className="text-white font-bold text-sm">Safe & Easy Payments</h4>
-              <p className="text-xs text-gray-400">bKash, Nagad, Cards & COD</p>
+              <h4 className="text-white font-bold text-xs sm:text-sm">Safe &amp; Easy Payments</h4>
+              <p className="text-[11px] sm:text-xs text-gray-400">bKash, Nagad, Cards &amp; COD</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-emerald-950/60 border border-emerald-900/60 flex items-center justify-center flex-shrink-0 text-emerald-400">
-              <ShieldCheck className="w-6 h-6" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-950/60 border border-emerald-900/60 flex items-center justify-center flex-shrink-0 text-emerald-400">
+              <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h4 className="text-white font-bold text-sm">100% Authentic</h4>
-              <p className="text-xs text-gray-400">Direct from certified brand stores</p>
+              <h4 className="text-white font-bold text-xs sm:text-sm">100% Authentic</h4>
+              <p className="text-[11px] sm:text-xs text-gray-400">Direct from certified brand stores</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-emerald-950/60 border border-emerald-900/60 flex items-center justify-center flex-shrink-0 text-emerald-400">
-              <RotateCcw className="w-6 h-6" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-950/60 border border-emerald-900/60 flex items-center justify-center flex-shrink-0 text-emerald-400">
+              <RotateCcw className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h4 className="text-white font-bold text-sm">14-Day Free Returns</h4>
-              <p className="text-xs text-gray-400">Hassle-free replacement policy</p>
+              <h4 className="text-white font-bold text-xs sm:text-sm">14-Day Free Returns</h4>
+              <p className="text-[11px] sm:text-xs text-gray-400">Hassle-free replacement policy</p>
             </div>
           </div>
         </div>

@@ -105,7 +105,7 @@ export default function HeroBanner({ banners }: HeroBannerProps) {
         </div>
 
         {/* Center: Hero Carousel Banner */}
-        <div className="lg:col-span-6 relative overflow-hidden rounded-2xl border border-emerald-900/60 bg-black min-h-[340px] md:min-h-[400px] shadow-2xl flex items-center">
+        <div className="lg:col-span-6 relative overflow-hidden rounded-2xl border border-emerald-900/60 bg-black min-h-[290px] sm:min-h-[350px] md:min-h-[400px] shadow-2xl flex items-center">
           {slides.map((slide, idx) => (
             <div
               key={slide.id || idx}
@@ -118,33 +118,33 @@ export default function HeroBanner({ banners }: HeroBannerProps) {
                 className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-1000"
                 style={{ backgroundImage: `url(${slide.image})` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
                 {/* Emerald accent glow */}
                 <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-emerald-600/20 rounded-full blur-3xl pointer-events-none"></div>
               </div>
 
               {/* Slide Content */}
-              <div className="relative z-20 h-full flex flex-col justify-center px-6 md:px-10 max-w-lg text-white">
-                <span className="inline-block px-3 py-1 text-xs font-bold uppercase rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 w-fit mb-3">
+              <div className="relative z-20 h-full flex flex-col justify-center px-4 sm:px-6 md:px-10 py-6 max-w-lg text-white">
+                <span className="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs font-bold uppercase rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 w-fit mb-2 sm:mb-3">
                   {slide.badge}
                 </span>
-                <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-white leading-tight mb-1.5 sm:mb-2">
                   {slide.title}
                 </h2>
-                <p className="text-sm md:text-base text-gray-300 font-medium mb-2">
+                <p className="text-xs sm:text-sm md:text-base text-gray-300 font-medium mb-1.5 sm:mb-2 line-clamp-2">
                   {slide.subtitle}
                 </p>
-                <p className="text-xs text-emerald-400 mb-6 font-semibold">
+                <p className="text-[11px] sm:text-xs text-emerald-400 mb-4 sm:mb-6 font-semibold line-clamp-1">
                   {slide.highlightText}
                 </p>
                 <div>
                   <Link
                     href={slide.link || "/#products"}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm rounded-xl shadow-lg shadow-emerald-950/60 transition group"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs sm:text-sm rounded-xl shadow-lg shadow-emerald-950/60 transition group"
                   >
                     <span>{slide.buttonText}</span>
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+                    <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition" />
                   </Link>
                 </div>
               </div>
@@ -155,30 +155,57 @@ export default function HeroBanner({ banners }: HeroBannerProps) {
           <button
             onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
             aria-label="Previous Slide"
-            className="absolute left-3 z-30 p-2 rounded-full bg-black/60 text-white hover:bg-emerald-600 hover:text-black border border-white/10 transition backdrop-blur-md"
+            className="absolute left-2 sm:left-3 z-30 p-1.5 sm:p-2 rounded-full bg-black/60 text-white hover:bg-emerald-600 hover:text-black border border-white/10 transition backdrop-blur-md"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
           <button
             onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
             aria-label="Next Slide"
-            className="absolute right-3 z-30 p-2 rounded-full bg-black/60 text-white hover:bg-emerald-600 hover:text-black border border-white/10 transition backdrop-blur-md"
+            className="absolute right-2 sm:right-3 z-30 p-1.5 sm:p-2 rounded-full bg-black/60 text-white hover:bg-emerald-600 hover:text-black border border-white/10 transition backdrop-blur-md"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
           {/* Carousel Dots */}
-          <div className="absolute bottom-4 left-0 right-0 z-30 flex justify-center space-x-2">
+          <div className="absolute bottom-3 sm:bottom-4 left-0 right-0 z-30 flex justify-center space-x-1.5 sm:space-x-2">
             {slides.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
                 aria-label={`Slide ${idx + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  idx === currentSlide ? "w-8 bg-emerald-400" : "w-2 bg-gray-600"
+                className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+                  idx === currentSlide ? "w-6 sm:w-8 bg-emerald-400" : "w-1.5 sm:w-2 bg-gray-600"
                 }`}
               />
             ))}
+          </div>
+        </div>
+
+        {/* Mobile & Tablet Quick Promo Strip (Under Carousel on <lg) */}
+        <div className="lg:hidden col-span-1 grid grid-cols-2 gap-2.5 mt-1">
+          {/* Card 1: Voucher */}
+          <div className="bg-[#0d1420] border border-emerald-950/80 rounded-xl p-3 shadow-md relative overflow-hidden flex flex-col justify-between">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[10px] font-bold text-emerald-400 bg-emerald-950/80 px-1.5 py-0.5 rounded border border-emerald-900/60">
+                ৳100 OFF
+              </span>
+              <Zap className="w-3.5 h-3.5 text-amber-400" />
+            </div>
+            <p className="text-xs font-bold text-white truncate">Code: ZARAZ100</p>
+            <p className="text-[10px] text-gray-400">On your first checkout</p>
+          </div>
+
+          {/* Card 2: Free Delivery */}
+          <div className="bg-[#0d1420] border border-emerald-950/80 rounded-xl p-3 shadow-md flex flex-col justify-between">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[10px] font-bold text-emerald-300 bg-emerald-950/80 px-1.5 py-0.5 rounded border border-emerald-900/60">
+                FREE COD
+              </span>
+              <Truck className="w-3.5 h-3.5 text-emerald-400" />
+            </div>
+            <p className="text-xs font-bold text-white truncate">Nationwide Express</p>
+            <p className="text-[10px] text-gray-400">On orders over ৳999</p>
           </div>
         </div>
 

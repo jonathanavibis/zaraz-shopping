@@ -44,22 +44,37 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[#090d16] border-b border-emerald-950/60 shadow-lg">
       {/* Top Utility Bar */}
-      <div className="bg-[#041d13] text-emerald-400 text-xs py-1.5 px-4 border-b border-emerald-900/40">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <span className="flex items-center gap-1">
+      <div className="bg-[#041d13] text-emerald-400 text-xs py-1.5 px-3 sm:px-4 border-b border-emerald-900/40">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          {/* Mobile Single Announcement */}
+          <div className="flex md:hidden items-center justify-between w-full text-[11px] font-semibold">
+            <span className="flex items-center gap-1 truncate">
+              <Truck className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+              <span>Free Delivery on ৳999+ • 100% Genuine Warranty</span>
+            </span>
+            <Link
+              href="/orders"
+              className="text-emerald-300 hover:text-white font-bold ml-2 flex-shrink-0 underline text-[10px]"
+            >
+              Track Order
+            </Link>
+          </div>
+
+          {/* Desktop Dual Column Utility */}
+          <div className="hidden md:flex items-center space-x-4">
+            <span className="flex items-center gap-1.5 font-medium">
               <Truck className="w-3.5 h-3.5 text-emerald-400" /> Free Delivery across Bangladesh on orders over ৳999
             </span>
-            <span className="hidden md:inline-block text-emerald-600">|</span>
-            <span className="hidden md:flex items-center gap-1">
+            <span className="text-emerald-600">|</span>
+            <span className="flex items-center gap-1.5 font-medium">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> 100% Genuine Products Guaranteed
             </span>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             <Link
               href="/add-product"
-              className="text-emerald-300 hover:text-white font-bold transition flex items-center gap-1 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/80"
+              className="text-emerald-300 hover:text-white font-bold transition flex items-center gap-1 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/80 hover:border-emerald-500"
             >
               <PlusCircle className="w-3 h-3 text-emerald-400" /> Sell on Zaraz (+ Add Product)
             </Link>
@@ -341,22 +356,22 @@ export default function Navbar() {
       )}
 
       {/* Navigation Sub-Bar */}
-      <nav className="bg-[#0b142d]/80 border-t border-emerald-950/80 px-4 py-1.5">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm">
-          <div className="flex items-center space-x-6 text-gray-300">
+      <nav className="bg-[#0b142d]/80 border-t border-emerald-950/80 px-3 sm:px-4 py-1.5 overflow-x-auto scrollbar-none">
+        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs sm:text-sm min-w-max md:min-w-0">
+          <div className="flex items-center space-x-4 sm:space-x-6 text-gray-300">
             {/* Daraz-Style Categories Mega Menu Button */}
             <CategoryMenu />
 
-            <Link href="/#flash-sale" className="flex items-center gap-1 font-bold text-amber-400 hover:text-amber-300">
+            <Link href="/#flash-sale" className="flex items-center gap-1 font-bold text-amber-400 hover:text-amber-300 whitespace-nowrap">
               <Zap className="w-4 h-4 fill-amber-400" /> Flash Sale
             </Link>
-            <Link href="/#products" className="hover:text-emerald-400 transition font-medium">
+            <Link href="/#products" className="hover:text-emerald-400 transition font-medium whitespace-nowrap">
               Zaraz Mall (Official)
             </Link>
-            <Link href="/add-product" className="hover:text-white transition font-bold text-emerald-400 flex items-center gap-1">
+            <Link href="/add-product" className="hover:text-white transition font-bold text-emerald-400 flex items-center gap-1 whitespace-nowrap">
               <PlusCircle className="w-3.5 h-3.5" /> Add Product (Seller)
             </Link>
-            <Link href="/orders" className="hover:text-emerald-400 transition font-medium">
+            <Link href="/orders" className="hover:text-emerald-400 transition font-medium whitespace-nowrap">
               My Orders &amp; Delivery
             </Link>
           </div>

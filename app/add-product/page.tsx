@@ -99,7 +99,7 @@ export default function AddProductPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-3 sm:px-4 py-6 sm:py-8 pb-24 md:pb-8">
       <Link
         href="/"
         className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 mb-6 transition"
@@ -107,7 +107,7 @@ export default function AddProductPage() {
         <ArrowLeft className="w-4 h-4" /> Back to Storefront
       </Link>
 
-      <div className="bg-[#0b1420] border border-emerald-950/80 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+      <div className="bg-[#0b1420] border border-emerald-950/80 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-2xl relative overflow-hidden">
         {/* Glow */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 

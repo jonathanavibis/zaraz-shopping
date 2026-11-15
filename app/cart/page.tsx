@@ -71,14 +71,14 @@ export default function CartPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <div className="flex items-center justify-between mb-6">
+    <div className="max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8 pb-28 md:pb-8">
+      <div className="flex items-center justify-between mb-5 sm:mb-6">
         <div>
-          <h1 className="text-2xl font-black text-white flex items-center gap-2">
-            <ShoppingCart className="w-6 h-6 text-emerald-400" />
+          <h1 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+            <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
             Shopping Cart ({itemCount} {itemCount === 1 ? "Item" : "Items"})
           </h1>
-          <p className="text-xs text-gray-400 mt-1">
+          <p className="text-xs text-gray-400 mt-0.5">
             Review your selected products and proceed to secure checkout.
           </p>
         </div>
@@ -312,6 +312,30 @@ export default function CartPage() {
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Sticky Mobile Checkout Bar */}
+      <div className="md:hidden fixed bottom-14 left-0 right-0 z-40 bg-[#070e17]/95 backdrop-blur-xl border-t border-emerald-950/90 px-3.5 py-2.5 flex items-center justify-between gap-3 shadow-[0_-8px_25px_rgba(0,0,0,0.6)]">
+        <div>
+          <span className="text-[10px] text-gray-400 block">Total ({itemCount} {itemCount === 1 ? "Item" : "Items"})</span>
+          <span className="text-lg font-black text-emerald-400 leading-tight">
+            {formatPrice(total)}
+          </span>
+        </div>
+        <button
+          onClick={() => {
+            if (!user) {
+              toast.error("Please sign in before checkout.");
+              router.push("/login?redirect=/checkout");
+              return;
+            }
+            router.push("/checkout");
+          }}
+          className="py-2.5 px-5 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs rounded-xl shadow-lg flex items-center gap-1.5 active:scale-95 transition"
+        >
+          <span>Checkout</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </button>
       </div>
     </div>
   );
